@@ -2,16 +2,21 @@
 var boxes = document.querySelectorAll(".box");
 
 // For the 1st box (index = 0), change the background color to "blue".
-boxes[0].style.backgroundColor = "blue";
+boxes[0].style.backgroundColor = "green";
+
+boxes[1].style.backgroundColor = "purple";
 
 // For the 3rd box (index = 2), change the background color to "yellow".
-boxes[2].style.backgroundColor = "yellow";
+boxes[2].style.backgroundColor = "#191919";
+
+boxes[3].style.backgroundColor = "blanchedalmond";
 
 // Variable to hold the current left margin.
 var leftMargin = 0;
+var topMargin = 0;
 
 // Variable used to add to the left margin.
-var moveAmount = 20;
+var moveAmount = 5;
 
 // Function that adds moveAmount to leftMargin then appends leftMargin
 // to the first box's margin left. Basically moving the box to the right.
@@ -24,5 +29,30 @@ function boxClicked() {
     boxes[0].style.marginLeft = leftMargin + "px";
 }
 
+function box1Clicked() {
+   leftMargin += (moveAmount*2);
+    boxes[1].style.marginLeft = leftMargin + "px";
+}
+
+function box2Clicked() {
+   leftMargin += (moveAmount*3);
+    boxes[2].style.marginLeft = leftMargin + "px";
+}
+
+function box3Clicked() {
+   leftMargin += (moveAmount*4);
+    boxes[3].style.marginLeft = leftMargin + "px";
+}
+
+function box4Clicked() {
+   topMargin += (moveAmount*5);
+    boxes[4].style.marginTop = topMargin + "px";
+}
+
+
 // When anyone clicks on the first box, call the function "boxClicked".
 boxes[0].addEventListener("click", boxClicked);
+boxes[1].addEventListener("click", box1Clicked);
+boxes[2].addEventListener("click", box2Clicked);
+boxes[3].addEventListener("dblclick", box3Clicked);
+boxes[4].addEventListener("click", box4Clicked);
